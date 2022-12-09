@@ -6,7 +6,7 @@ add_library(_mcts
   mcts.cc
   storage.cc
 )
-target_link_libraries(_mcts PUBLIC pthread)
+target_link_libraries(_mcts PUBLIC pthread iomp5)
 target_include_directories(_mcts PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
 
 target_include_directories(_mcts PUBLIC ${TORCH_INCLUDE_DIRS})

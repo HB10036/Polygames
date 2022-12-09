@@ -352,3 +352,6 @@ run.sh
 
 # Ludii's JAR file
 ludii/Ludii.jar
+
+# Build directory
+build/

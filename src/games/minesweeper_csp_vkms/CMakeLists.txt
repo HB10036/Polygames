@@ -16,14 +16,17 @@ include_directories( ${PYTHON_INCLUDE_DIRS} )
 
 set(SRC_DIR ../..)
 
-add_executable(benchmark_csp_vkms
+add_library(_benchmark_csp_vkms
   ${SRC_DIR}/core/state.cc
   ${SRC_DIR}/games/minesweeper.cc
-  csp_vkms.cc
 )
-target_include_directories(benchmark_csp_vkms PUBLIC ${SRC_DIR})
-target_link_libraries(benchmark_csp_vkms
+target_include_directories(_benchmark_csp_vkms PUBLIC ${SRC_DIR})
+target_link_libraries(_benchmark_csp_vkms
   ${CMAKE_THREAD_LIBS_INIT}
   ${TORCH_LIBRARIES}
   fmt
+  iomp5
 )
+
+add_executable(benchmark_csp_vkms csp_vkms.cc)
+target_link_libraries(benchmark_csp_vkms _benchmark_csp_vkms)
