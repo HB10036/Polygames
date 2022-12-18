@@ -1,5 +1,9 @@
 [![CircleCI](https://circleci.com/gh/facebookincubator/Polygames.svg?style=svg)](https://circleci.com/gh/facebookincubator/Polygames)
 
+# Highlight
+
+This repository was forked from [facebookarchive/Polygames](https://github.com/facebookincubator/polygames)
+
 # Polygames
 
 This README is a work in progress, please feel very free to post issues - we are happy to help.
@@ -26,9 +30,9 @@ conda create --name [your env name] python=3.7 pip
 
 conda activate [your env name] # Or source activate [your env name], depending on conda version.
 
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
 conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
-conda install pytorch cudatoolkit=10.1 -c pytorch
-conda install -c conda-forge tensorboardx
+conda install -c conda-forge tensorboardx cudnn
 conda install -c conda-forge openjdk  # optional
 conda install -c conda-forge graphviz # optional
 
@@ -41,8 +45,10 @@ pip install torchviz				  # optional
 
 
 ```
-git clone --recursive https://github.com/facebookincubator/polygames
+git clone --recursive https://github.com/HB10036/polygames
 cd polygames
+
+source environment.sh
 
 mkdir build
 cd build
